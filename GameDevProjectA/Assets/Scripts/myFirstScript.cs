@@ -7,6 +7,7 @@ public class myFirstScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Added comment
         Debug.Log("Hello World!");
     }
 
