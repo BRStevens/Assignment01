@@ -8,10 +8,7 @@ public class playerManager : MonoBehaviour
     SpriteRenderer spriteRen;
     Animator tankAnim;
 
-    // declare variables 
-    // we need a ridgidbody reference
-    // we need a sprite renderer reference
-    // and we need an animator reference
+    public GameObject projectilePrefab;
 
 
     // Start is called before the first frame update
@@ -84,6 +81,26 @@ public class playerManager : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0, 0);
         }
+
+        // If the user pushes the space bar then fire a projectile
+                
+        // check if user has pushed space
+        if(Input.GetKeyDown("space"))
+        {
+            // Debug.Log("player tries fire");
+
+            // Instantiate the player from a prefab!
+            GameObject thisProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Rigidbody2D projectileRB = thisProjectile.GetComponent<Rigidbody2D>();
+            projectileRB.velocity = new Vector2(0, 10);
+        }
+
+
+        // instantiate projectile
+        // where? What position does the projectile start in?
+        // what direction will the projectile move?
+        // How fast will the projectile move?
+
 
     }
 }
